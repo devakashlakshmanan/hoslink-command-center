@@ -15,6 +15,7 @@ import { Route as PatientsRouteImport } from './routes/patients'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as IncidentsRouteImport } from './routes/incidents'
 import { Route as HospitalsRouteImport } from './routes/hospitals'
+import { Route as FamilyRouteImport } from './routes/family'
 import { Route as CommandRouteImport } from './routes/command'
 import { Route as AmbulancesRouteImport } from './routes/ambulances'
 import { Route as AiCommanderRouteImport } from './routes/ai-commander'
@@ -50,6 +51,11 @@ const HospitalsRoute = HospitalsRouteImport.update({
   path: '/hospitals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FamilyRoute = FamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CommandRoute = CommandRouteImport.update({
   id: '/command',
   path: '/command',
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/ai-commander': typeof AiCommanderRoute
   '/ambulances': typeof AmbulancesRoute
   '/command': typeof CommandRoute
+  '/family': typeof FamilyRoute
   '/hospitals': typeof HospitalsRoute
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/ai-commander': typeof AiCommanderRoute
   '/ambulances': typeof AmbulancesRoute
   '/command': typeof CommandRoute
+  '/family': typeof FamilyRoute
   '/hospitals': typeof HospitalsRoute
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/ai-commander': typeof AiCommanderRoute
   '/ambulances': typeof AmbulancesRoute
   '/command': typeof CommandRoute
+  '/family': typeof FamilyRoute
   '/hospitals': typeof HospitalsRoute
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/ai-commander'
     | '/ambulances'
     | '/command'
+    | '/family'
     | '/hospitals'
     | '/incidents'
     | '/login'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/ai-commander'
     | '/ambulances'
     | '/command'
+    | '/family'
     | '/hospitals'
     | '/incidents'
     | '/login'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/ai-commander'
     | '/ambulances'
     | '/command'
+    | '/family'
     | '/hospitals'
     | '/incidents'
     | '/login'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   AiCommanderRoute: typeof AiCommanderRoute
   AmbulancesRoute: typeof AmbulancesRoute
   CommandRoute: typeof CommandRoute
+  FamilyRoute: typeof FamilyRoute
   HospitalsRoute: typeof HospitalsRoute
   IncidentsRoute: typeof IncidentsRoute
   LoginRoute: typeof LoginRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HospitalsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/family': {
+      id: '/family'
+      path: '/family'
+      fullPath: '/family'
+      preLoaderRoute: typeof FamilyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/command': {
       id: '/command'
       path: '/command'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiCommanderRoute: AiCommanderRoute,
   AmbulancesRoute: AmbulancesRoute,
   CommandRoute: CommandRoute,
+  FamilyRoute: FamilyRoute,
   HospitalsRoute: HospitalsRoute,
   IncidentsRoute: IncidentsRoute,
   LoginRoute: LoginRoute,
