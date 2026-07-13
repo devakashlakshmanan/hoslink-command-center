@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TriageRouteImport } from './routes/triage'
+import { Route as SimulationRouteImport } from './routes/simulation'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as PatientsRouteImport } from './routes/patients'
 import { Route as LoginRouteImport } from './routes/login'
@@ -24,6 +25,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TriageRoute = TriageRouteImport.update({
   id: '/triage',
   path: '/triage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulationRoute = SimulationRouteImport.update({
+  id: '/simulation',
+  path: '/simulation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResourcesRoute = ResourcesRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/patients': typeof PatientsRoute
   '/resources': typeof ResourcesRoute
+  '/simulation': typeof SimulationRoute
   '/triage': typeof TriageRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/patients': typeof PatientsRoute
   '/resources': typeof ResourcesRoute
+  '/simulation': typeof SimulationRoute
   '/triage': typeof TriageRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/patients': typeof PatientsRoute
   '/resources': typeof ResourcesRoute
+  '/simulation': typeof SimulationRoute
   '/triage': typeof TriageRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/patients'
     | '/resources'
+    | '/simulation'
     | '/triage'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/patients'
     | '/resources'
+    | '/simulation'
     | '/triage'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/patients'
     | '/resources'
+    | '/simulation'
     | '/triage'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   PatientsRoute: typeof PatientsRoute
   ResourcesRoute: typeof ResourcesRoute
+  SimulationRoute: typeof SimulationRoute
   TriageRoute: typeof TriageRoute
 }
 
@@ -180,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/triage'
       fullPath: '/triage'
       preLoaderRoute: typeof TriageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulation': {
+      id: '/simulation'
+      path: '/simulation'
+      fullPath: '/simulation'
+      preLoaderRoute: typeof SimulationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/resources': {
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   PatientsRoute: PatientsRoute,
   ResourcesRoute: ResourcesRoute,
+  SimulationRoute: SimulationRoute,
   TriageRoute: TriageRoute,
 }
 export const routeTree = rootRouteImport
