@@ -9,8 +9,98 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TriageRouteImport } from './routes/triage'
+import { Route as SimulationRouteImport } from './routes/simulation'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as PatientsRouteImport } from './routes/patients'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as IncidentsRouteImport } from './routes/incidents'
+import { Route as HospitalsRouteImport } from './routes/hospitals'
+import { Route as FamilyRouteImport } from './routes/family'
+import { Route as CommandRouteImport } from './routes/command'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AmbulancesRouteImport } from './routes/ambulances'
+import { Route as AiCommanderRouteImport } from './routes/ai-commander'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TriageRoute = TriageRouteImport.update({
+  id: '/triage',
+  path: '/triage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulationRoute = SimulationRouteImport.update({
+  id: '/simulation',
+  path: '/simulation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientsRoute = PatientsRouteImport.update({
+  id: '/patients',
+  path: '/patients',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IncidentsRoute = IncidentsRouteImport.update({
+  id: '/incidents',
+  path: '/incidents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HospitalsRoute = HospitalsRouteImport.update({
+  id: '/hospitals',
+  path: '/hospitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FamilyRoute = FamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommandRoute = CommandRouteImport.update({
+  id: '/command',
+  path: '/command',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmbulancesRoute = AmbulancesRouteImport.update({
+  id: '/ambulances',
+  path: '/ambulances',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiCommanderRoute = AiCommanderRouteImport.update({
+  id: '/ai-commander',
+  path: '/ai-commander',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +109,242 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-commander': typeof AiCommanderRoute
+  '/ambulances': typeof AmbulancesRoute
+  '/analytics': typeof AnalyticsRoute
+  '/command': typeof CommandRoute
+  '/family': typeof FamilyRoute
+  '/hospitals': typeof HospitalsRoute
+  '/incidents': typeof IncidentsRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/patients': typeof PatientsRoute
+  '/reports': typeof ReportsRoute
+  '/resources': typeof ResourcesRoute
+  '/settings': typeof SettingsRoute
+  '/simulation': typeof SimulationRoute
+  '/triage': typeof TriageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-commander': typeof AiCommanderRoute
+  '/ambulances': typeof AmbulancesRoute
+  '/analytics': typeof AnalyticsRoute
+  '/command': typeof CommandRoute
+  '/family': typeof FamilyRoute
+  '/hospitals': typeof HospitalsRoute
+  '/incidents': typeof IncidentsRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/patients': typeof PatientsRoute
+  '/reports': typeof ReportsRoute
+  '/resources': typeof ResourcesRoute
+  '/settings': typeof SettingsRoute
+  '/simulation': typeof SimulationRoute
+  '/triage': typeof TriageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-commander': typeof AiCommanderRoute
+  '/ambulances': typeof AmbulancesRoute
+  '/analytics': typeof AnalyticsRoute
+  '/command': typeof CommandRoute
+  '/family': typeof FamilyRoute
+  '/hospitals': typeof HospitalsRoute
+  '/incidents': typeof IncidentsRoute
+  '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/patients': typeof PatientsRoute
+  '/reports': typeof ReportsRoute
+  '/resources': typeof ResourcesRoute
+  '/settings': typeof SettingsRoute
+  '/simulation': typeof SimulationRoute
+  '/triage': typeof TriageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ai-commander'
+    | '/ambulances'
+    | '/analytics'
+    | '/command'
+    | '/family'
+    | '/hospitals'
+    | '/incidents'
+    | '/login'
+    | '/notifications'
+    | '/patients'
+    | '/reports'
+    | '/resources'
+    | '/settings'
+    | '/simulation'
+    | '/triage'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ai-commander'
+    | '/ambulances'
+    | '/analytics'
+    | '/command'
+    | '/family'
+    | '/hospitals'
+    | '/incidents'
+    | '/login'
+    | '/notifications'
+    | '/patients'
+    | '/reports'
+    | '/resources'
+    | '/settings'
+    | '/simulation'
+    | '/triage'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-commander'
+    | '/ambulances'
+    | '/analytics'
+    | '/command'
+    | '/family'
+    | '/hospitals'
+    | '/incidents'
+    | '/login'
+    | '/notifications'
+    | '/patients'
+    | '/reports'
+    | '/resources'
+    | '/settings'
+    | '/simulation'
+    | '/triage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiCommanderRoute: typeof AiCommanderRoute
+  AmbulancesRoute: typeof AmbulancesRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  CommandRoute: typeof CommandRoute
+  FamilyRoute: typeof FamilyRoute
+  HospitalsRoute: typeof HospitalsRoute
+  IncidentsRoute: typeof IncidentsRoute
+  LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
+  PatientsRoute: typeof PatientsRoute
+  ReportsRoute: typeof ReportsRoute
+  ResourcesRoute: typeof ResourcesRoute
+  SettingsRoute: typeof SettingsRoute
+  SimulationRoute: typeof SimulationRoute
+  TriageRoute: typeof TriageRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/triage': {
+      id: '/triage'
+      path: '/triage'
+      fullPath: '/triage'
+      preLoaderRoute: typeof TriageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulation': {
+      id: '/simulation'
+      path: '/simulation'
+      fullPath: '/simulation'
+      preLoaderRoute: typeof SimulationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patients': {
+      id: '/patients'
+      path: '/patients'
+      fullPath: '/patients'
+      preLoaderRoute: typeof PatientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/incidents': {
+      id: '/incidents'
+      path: '/incidents'
+      fullPath: '/incidents'
+      preLoaderRoute: typeof IncidentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hospitals': {
+      id: '/hospitals'
+      path: '/hospitals'
+      fullPath: '/hospitals'
+      preLoaderRoute: typeof HospitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/family': {
+      id: '/family'
+      path: '/family'
+      fullPath: '/family'
+      preLoaderRoute: typeof FamilyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/command': {
+      id: '/command'
+      path: '/command'
+      fullPath: '/command'
+      preLoaderRoute: typeof CommandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ambulances': {
+      id: '/ambulances'
+      path: '/ambulances'
+      fullPath: '/ambulances'
+      preLoaderRoute: typeof AmbulancesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-commander': {
+      id: '/ai-commander'
+      path: '/ai-commander'
+      fullPath: '/ai-commander'
+      preLoaderRoute: typeof AiCommanderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +357,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiCommanderRoute: AiCommanderRoute,
+  AmbulancesRoute: AmbulancesRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  CommandRoute: CommandRoute,
+  FamilyRoute: FamilyRoute,
+  HospitalsRoute: HospitalsRoute,
+  IncidentsRoute: IncidentsRoute,
+  LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
+  PatientsRoute: PatientsRoute,
+  ReportsRoute: ReportsRoute,
+  ResourcesRoute: ResourcesRoute,
+  SettingsRoute: SettingsRoute,
+  SimulationRoute: SimulationRoute,
+  TriageRoute: TriageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
