@@ -11,8 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TriageRouteImport } from './routes/triage'
 import { Route as SimulationRouteImport } from './routes/simulation'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as PatientsRouteImport } from './routes/patients'
+import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as IncidentsRouteImport } from './routes/incidents'
 import { Route as HospitalsRouteImport } from './routes/hospitals'
@@ -33,14 +36,29 @@ const SimulationRoute = SimulationRouteImport.update({
   path: '/simulation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PatientsRoute = PatientsRouteImport.update({
   id: '/patients',
   path: '/patients',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -99,8 +117,11 @@ export interface FileRoutesByFullPath {
   '/hospitals': typeof HospitalsRoute
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/patients': typeof PatientsRoute
+  '/reports': typeof ReportsRoute
   '/resources': typeof ResourcesRoute
+  '/settings': typeof SettingsRoute
   '/simulation': typeof SimulationRoute
   '/triage': typeof TriageRoute
 }
@@ -114,8 +135,11 @@ export interface FileRoutesByTo {
   '/hospitals': typeof HospitalsRoute
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/patients': typeof PatientsRoute
+  '/reports': typeof ReportsRoute
   '/resources': typeof ResourcesRoute
+  '/settings': typeof SettingsRoute
   '/simulation': typeof SimulationRoute
   '/triage': typeof TriageRoute
 }
@@ -130,8 +154,11 @@ export interface FileRoutesById {
   '/hospitals': typeof HospitalsRoute
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/patients': typeof PatientsRoute
+  '/reports': typeof ReportsRoute
   '/resources': typeof ResourcesRoute
+  '/settings': typeof SettingsRoute
   '/simulation': typeof SimulationRoute
   '/triage': typeof TriageRoute
 }
@@ -147,8 +174,11 @@ export interface FileRouteTypes {
     | '/hospitals'
     | '/incidents'
     | '/login'
+    | '/notifications'
     | '/patients'
+    | '/reports'
     | '/resources'
+    | '/settings'
     | '/simulation'
     | '/triage'
   fileRoutesByTo: FileRoutesByTo
@@ -162,8 +192,11 @@ export interface FileRouteTypes {
     | '/hospitals'
     | '/incidents'
     | '/login'
+    | '/notifications'
     | '/patients'
+    | '/reports'
     | '/resources'
+    | '/settings'
     | '/simulation'
     | '/triage'
   id:
@@ -177,8 +210,11 @@ export interface FileRouteTypes {
     | '/hospitals'
     | '/incidents'
     | '/login'
+    | '/notifications'
     | '/patients'
+    | '/reports'
     | '/resources'
+    | '/settings'
     | '/simulation'
     | '/triage'
   fileRoutesById: FileRoutesById
@@ -193,8 +229,11 @@ export interface RootRouteChildren {
   HospitalsRoute: typeof HospitalsRoute
   IncidentsRoute: typeof IncidentsRoute
   LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
   PatientsRoute: typeof PatientsRoute
+  ReportsRoute: typeof ReportsRoute
   ResourcesRoute: typeof ResourcesRoute
+  SettingsRoute: typeof SettingsRoute
   SimulationRoute: typeof SimulationRoute
   TriageRoute: typeof TriageRoute
 }
@@ -215,6 +254,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SimulationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resources': {
       id: '/resources'
       path: '/resources'
@@ -222,11 +268,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/patients': {
       id: '/patients'
       path: '/patients'
       fullPath: '/patients'
       preLoaderRoute: typeof PatientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -305,11 +365,24 @@ const rootRouteChildren: RootRouteChildren = {
   HospitalsRoute: HospitalsRoute,
   IncidentsRoute: IncidentsRoute,
   LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
   PatientsRoute: PatientsRoute,
+  ReportsRoute: ReportsRoute,
   ResourcesRoute: ResourcesRoute,
+  SettingsRoute: SettingsRoute,
   SimulationRoute: SimulationRoute,
   TriageRoute: TriageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
