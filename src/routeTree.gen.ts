@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TriageRouteImport } from './routes/triage'
+import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as PatientsRouteImport } from './routes/patients'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as IncidentsRouteImport } from './routes/incidents'
@@ -22,6 +23,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TriageRoute = TriageRouteImport.update({
   id: '/triage',
   path: '/triage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PatientsRoute = PatientsRouteImport.update({
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
   '/patients': typeof PatientsRoute
+  '/resources': typeof ResourcesRoute
   '/triage': typeof TriageRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
   '/patients': typeof PatientsRoute
+  '/resources': typeof ResourcesRoute
   '/triage': typeof TriageRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/incidents': typeof IncidentsRoute
   '/login': typeof LoginRoute
   '/patients': typeof PatientsRoute
+  '/resources': typeof ResourcesRoute
   '/triage': typeof TriageRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/incidents'
     | '/login'
     | '/patients'
+    | '/resources'
     | '/triage'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/incidents'
     | '/login'
     | '/patients'
+    | '/resources'
     | '/triage'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/incidents'
     | '/login'
     | '/patients'
+    | '/resources'
     | '/triage'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   IncidentsRoute: typeof IncidentsRoute
   LoginRoute: typeof LoginRoute
   PatientsRoute: typeof PatientsRoute
+  ResourcesRoute: typeof ResourcesRoute
   TriageRoute: typeof TriageRoute
 }
 
@@ -154,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/triage'
       fullPath: '/triage'
       preLoaderRoute: typeof TriageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/patients': {
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   IncidentsRoute: IncidentsRoute,
   LoginRoute: LoginRoute,
   PatientsRoute: PatientsRoute,
+  ResourcesRoute: ResourcesRoute,
   TriageRoute: TriageRoute,
 }
 export const routeTree = rootRouteImport
