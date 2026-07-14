@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Droplet, Wind, Stethoscope, Bed, Ambulance, Zap, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/resources")({
-  head: () => ({ meta: [{ title: "Resource Exchange — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Resource Exchange — UrHealth AI" }] }),
   component: () => <AppShell><ResourcesPage /></AppShell>,
 });
 

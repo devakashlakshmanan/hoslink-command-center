@@ -9,7 +9,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/patients")({
-  head: () => ({ meta: [{ title: "Patient Tracking — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Patient Tracking — UrHealth AI" }] }),
   component: () => <AppShell><PatientsPage /></AppShell>,
 });
 

@@ -9,7 +9,7 @@ import { Search, Building2, Droplet, MapPin, ShieldPlus, Stethoscope } from "luc
 import { LineChart, Line, ResponsiveContainer } from "recharts";
 
 export const Route = createFileRoute("/hospitals")({
-  head: () => ({ meta: [{ title: "Hospital Network — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Hospital Network — UrHealth AI" }] }),
   component: () => <AppShell><HospitalNetwork /></AppShell>,
 });
 

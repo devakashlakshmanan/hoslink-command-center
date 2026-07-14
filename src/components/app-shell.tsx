@@ -54,7 +54,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               </span>
             </div>
             <div className="leading-none">
-              <div className="text-sm font-bold">HosLink <span className="text-gradient-medical">AI</span></div>
+              <div className="text-sm font-bold">UrHealth <span className="text-gradient-medical">AI</span></div>
               <div className="text-[9px] uppercase tracking-widest text-muted-foreground">MCI · v4.2</div>
             </div>
           </div>
@@ -193,7 +193,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       {/* Floating AI Assistant */}
       <button className="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full gradient-medical px-4 py-3 text-sm font-medium text-primary-foreground shadow-elevated hover:opacity-95">
-        <Brain className="h-4 w-4" /> Ask HosLink AI
+        <Brain className="h-4 w-4" /> Ask UrHealth AI
       </button>
     </div>
   );

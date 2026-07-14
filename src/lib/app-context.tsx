@@ -13,18 +13,18 @@ type AppState = {
 const AppContext = createContext<AppState | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
   const [mode, setMode] = useState<Mode>("production");
 
   useEffect(() => {
-    const stored = (typeof window !== "undefined" && localStorage.getItem("hoslink-theme")) as Theme | null;
+    const stored = (typeof window !== "undefined" && localStorage.getItem("urhealth-theme")) as Theme | null;
     if (stored) setThemeState(stored);
   }, []);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
     document.documentElement.classList.toggle("dark", theme === "dark");
-    try { localStorage.setItem("hoslink-theme", theme); } catch {}
+    try { localStorage.setItem("urhealth-theme", theme); } catch {}
   }, [theme]);
 
   return (

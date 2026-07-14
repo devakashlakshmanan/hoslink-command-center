@@ -8,7 +8,7 @@ import { AreaChart, Area, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/simulation")({
-  head: () => ({ meta: [{ title: "Simulation Mode — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Simulation Mode — UrHealth AI" }] }),
   component: () => <AppShell><Simulation /></AppShell>,
 });
 

@@ -7,7 +7,7 @@ import { Bell, Filter, Check } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/notifications")({
-  head: () => ({ meta: [{ title: "Notifications — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Notifications — UrHealth AI" }] }),
   component: () => <AppShell><Notifications /></AppShell>,
 });
 

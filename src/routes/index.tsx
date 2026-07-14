@@ -14,7 +14,7 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "HosLink AI — AI-Powered Mass Casualty Coordination" },
+      { title: "UrHealth AI — AI-Powered Mass Casualty Coordination" },
       { name: "description", content: "Real-time AI coordination platform for hospitals, ambulances, blood banks and emergency operation centers across India." },
     ],
   }),
@@ -45,7 +45,7 @@ function Landing() {
               </span>
             </div>
             <div className="leading-none">
-              <div className="text-base font-bold tracking-tight">HosLink <span className="text-gradient-medical">AI</span></div>
+              <div className="text-base font-bold tracking-tight">UrHealth <span className="text-gradient-medical">AI</span></div>
               <div className="text-[10px] uppercase tracking-widest text-muted-foreground">MCI Coordination</div>
             </div>
           </Link>
@@ -85,7 +85,7 @@ function Landing() {
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
               className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl"
             >
-              HosLink <span className="text-gradient-medical">AI</span>
+              UrHealth <span className="text-gradient-medical">AI</span>
               <span className="block mt-2 text-3xl font-medium text-muted-foreground md:text-4xl">
                 AI-Powered Mass Casualty <br className="hidden md:block" /> Coordination Platform
               </span>
@@ -185,7 +185,7 @@ function Landing() {
               { i: <Activity />, t: "Command Center", d: "Mission-control view of every incident, hospital, ambulance and resource." },
               { i: <Brain />, t: "AI Incident Commander", d: "Explains every recommendation — no black-box, no raw model output." },
               { i: <Hospital />, t: "Hospital Network", d: "Live beds, ICU, HDU, ventilators, blood, O₂, OT & readiness score." },
-              { i: <HeartPulse />, t: "Patient Tracking", d: "Unique HosLink ID + QR from scene to discharge, with triage & vitals." },
+              { i: <HeartPulse />, t: "Patient Tracking", d: "Unique UrHealth ID + QR from scene to discharge, with triage & vitals." },
               { i: <Ambulance />, t: "Ambulance Ops", d: "Live GPS, ETA, fuel, equipment, patient assignment across fleets." },
               { i: <Waves />, t: "Family Reunification", d: "Calming, privacy-first search across every connected hospital." },
             ].map((m, i) => (
@@ -222,7 +222,7 @@ function Landing() {
             <div className="relative grid gap-6 md:grid-cols-2 md:items-center">
               <div>
                 <h3 className="text-3xl font-bold md:text-4xl">Ready when seconds matter.</h3>
-                <p className="mt-3 max-w-lg text-muted-foreground">Deploy HosLink AI at your State EOC and connect your district in under 30 days.</p>
+                <p className="mt-3 max-w-lg text-muted-foreground">Deploy UrHealth AI at your State EOC and connect your district in under 30 days.</p>
               </div>
               <div className="flex flex-wrap gap-3 md:justify-end">
                 <Button size="lg" className="gradient-medical border-0 text-primary-foreground">Request Demo</Button>
@@ -242,7 +242,7 @@ function Landing() {
                 <div className="h-8 w-8 rounded-lg gradient-medical grid place-items-center">
                   <Activity className="h-4 w-4 text-primary-foreground" />
                 </div>
-                <div className="font-bold">HosLink AI</div>
+                <div className="font-bold">UrHealth AI</div>
               </div>
               <p className="mt-3 text-sm text-muted-foreground max-w-xs">Sovereign coordination infrastructure for India's mass casualty response.</p>
               <div className="mt-4 flex gap-3 text-muted-foreground">
@@ -266,7 +266,7 @@ function Landing() {
             ))}
           </div>
           <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-border/60 pt-6 text-xs text-muted-foreground">
-            <div>© 2026 HosLink AI Technologies Pvt. Ltd. · Bengaluru · New Delhi</div>
+            <div>© 2026 UrHealth AI Technologies Pvt. Ltd. · Bengaluru · New Delhi</div>
             <div className="flex gap-4">
               <a href="#">Privacy</a><a href="#">Terms</a><a href="#">DPDP Act</a><a href="#">Accessibility</a>
             </div>

@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export const Route = createFileRoute("/incidents")({
-  head: () => ({ meta: [{ title: "Incidents — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Incidents — UrHealth AI" }] }),
   component: () => <AppShell><Incidents /></AppShell>,
 });
 

@@ -4,7 +4,7 @@ import { BarChart, Bar, LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tool
 import { Badge } from "@/components/ui/badge";
 
 export const Route = createFileRoute("/analytics")({
-  head: () => ({ meta: [{ title: "Analytics — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Analytics — UrHealth AI" }] }),
   component: () => <AppShell><Analytics /></AppShell>,
 });
 
