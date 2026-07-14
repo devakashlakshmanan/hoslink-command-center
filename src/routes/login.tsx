@@ -21,7 +21,7 @@ const roles = [
 ];
 
 export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "Sign in — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Sign in — UrHealth AI" }] }),
   component: LoginPage,
 });
 
@@ -40,7 +40,7 @@ function LoginPage() {
               <Activity className="h-5 w-5 text-primary-foreground" />
             </div>
             <div>
-              <div className="font-bold">HosLink <span className="text-gradient-medical">AI</span></div>
+              <div className="font-bold">UrHealth <span className="text-gradient-medical">AI</span></div>
               <div className="text-[10px] uppercase tracking-widest text-muted-foreground">MCI Coordination</div>
             </div>
           </Link>

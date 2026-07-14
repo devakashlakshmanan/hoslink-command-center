@@ -8,7 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { AreaChart, Area, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recharts";
 
 export const Route = createFileRoute("/ai-commander")({
-  head: () => ({ meta: [{ title: "AI Incident Commander — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "AI Incident Commander — UrHealth AI" }] }),
   component: () => <AppShell><AICommander /></AppShell>,
 });
 

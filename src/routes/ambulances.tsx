@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/ambulances")({
-  head: () => ({ meta: [{ title: "Ambulance Ops — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Ambulance Ops — UrHealth AI" }] }),
   component: () => <AppShell><AmbulancesPage /></AppShell>,
 });
 

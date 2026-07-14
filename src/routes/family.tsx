@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 
 export const Route = createFileRoute("/family")({
-  head: () => ({ meta: [{ title: "Family Reunification Center — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Family Reunification Center — UrHealth AI" }] }),
   component: FamilyPage,
 });
 
@@ -36,7 +36,7 @@ function FamilyPage() {
             </div>
             <div>
               <div className="font-semibold" style={{ color: "oklch(0.25 0.05 250)" }}>Family Reunification Center</div>
-              <div className="text-[10px] uppercase tracking-widest" style={{ color: "oklch(0.5 0.03 250)" }}>Powered by HosLink AI</div>
+              <div className="text-[10px] uppercase tracking-widest" style={{ color: "oklch(0.5 0.03 250)" }}>Powered by UrHealth AI</div>
             </div>
           </Link>
           <a href="tel:112" className="flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-sm font-medium shadow" style={{ color: "oklch(0.6 0.24 25)" }}>
@@ -54,7 +54,7 @@ function FamilyPage() {
             We're here to help you find your loved one.
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-base" style={{ color: "oklch(0.4 0.03 250)" }}>
-            Search across every hospital connected to the HosLink network. Our team will contact you as soon as we have news.
+            Search across every hospital connected to the UrHealth network. Our team will contact you as soon as we have news.
           </p>
         </motion.div>
 
@@ -135,7 +135,7 @@ function FamilyPage() {
 
         <div className="mt-16 text-center text-xs" style={{ color: "oklch(0.5 0.03 250)" }}>
           <Activity className="mx-auto mb-2 h-4 w-4" style={{ color: "oklch(0.55 0.18 250)" }} />
-          HosLink AI · Family Reunification Center · Operated under NDMA guidelines
+          UrHealth AI · Family Reunification Center · Operated under NDMA guidelines
         </div>
       </main>
     </div>

@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { FileText, Download, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/reports")({
-  head: () => ({ meta: [{ title: "Reports — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Reports — UrHealth AI" }] }),
   component: () => <AppShell><Reports /></AppShell>,
 });
 

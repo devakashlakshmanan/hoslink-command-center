@@ -21,7 +21,7 @@ function NotFoundComponent() {
         <div className="mx-auto mb-4 h-14 w-14 rounded-2xl gradient-medical grid place-items-center text-primary-foreground font-black">404</div>
         <h1 className="text-2xl font-bold tracking-tight">Signal lost</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          This route isn't part of the HosLink AI grid.
+          This route isn't part of the UrHealth AI grid.
         </p>
         <Link to="/" className="mt-6 inline-flex items-center justify-center rounded-lg gradient-medical px-4 py-2 text-sm font-medium text-primary-foreground">
           Return to Base
@@ -55,10 +55,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HosLink AI — Mass Casualty Coordination Platform" },
+      { title: "UrHealth AI — Mass Casualty Coordination Platform" },
       { name: "description", content: "AI-powered Mass Casualty Incident (MCI) coordination platform for State EOCs, hospitals, ambulances and blood banks across India." },
-      { name: "author", content: "HosLink AI" },
-      { property: "og:title", content: "HosLink AI — Mass Casualty Coordination" },
+      { name: "author", content: "UrHealth AI" },
+      { property: "og:title", content: "UrHealth AI — Mass Casualty Coordination" },
       { property: "og:description", content: "Real-time AI coordination for hospitals, ambulances, and disaster response across India." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

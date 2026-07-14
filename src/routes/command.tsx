@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 
 export const Route = createFileRoute("/command")({
-  head: () => ({ meta: [{ title: "Command Center — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Command Center — UrHealth AI" }] }),
   component: () => <AppShell><CommandCenter /></AppShell>,
 });
 

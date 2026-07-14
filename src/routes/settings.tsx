@@ -8,7 +8,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useApp } from "@/lib/app-context";
 
 export const Route = createFileRoute("/settings")({
-  head: () => ({ meta: [{ title: "Settings — HosLink AI" }] }),
+  head: () => ({ meta: [{ title: "Settings — UrHealth AI" }] }),
   component: () => <AppShell><Settings /></AppShell>,
 });
 
@@ -60,7 +60,7 @@ function Settings() {
           <Row label="Language" v="English (India)" />
         </TabsContent>
         <TabsContent value="api" className="glass mt-3 rounded-2xl p-5 space-y-3">
-          <Row label="HL7/FHIR endpoint" v="https://fhir.hoslink.gov.in/r4" />
+          <Row label="HL7/FHIR endpoint" v="https://fhir.urhealth.gov.in/r4" />
           <Row label="Nemotron key" v="•••• •••• •••• 42a1" />
           <Button className="gradient-medical border-0 text-primary-foreground">Rotate keys</Button>
         </TabsContent>

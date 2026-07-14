@@ -1,4 +1,4 @@
-// Shared mock data for HosLink AI
+// Shared mock data for UrHealth AI
 export type Hospital = {
   id: string;
   name: string;
